@@ -38,7 +38,7 @@ const TaskForm = forwardRef(({ exp }, ref) => {
     ref.current?.addEventListener("close", onClose);
 
     return () => {
-      ref.current.removeEventListener("close", onClose);
+      ref.current?.removeEventListener("close", onClose);
     };
   }, []);
 
