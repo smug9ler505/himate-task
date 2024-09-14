@@ -1,0 +1,29 @@
+.card {
+  border: 1px solid black;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  max-width: 512px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+}
+
+.expInfo {
+  text-transform: capitalize;
+}
+
+.btnAction {
+  background-color: unset;
+  transition: all ease-in-out 0.25s;
+  cursor: pointer;
+  &[title="Delete"]:hover {
+    transform: scale(1.2);
+    border-bottom: 3px solid red;
+  }
+  &[title="Modify"]:hover {
+    transform: scale(1.2);
+    border-bottom: 3px solid green;
+  }
+}

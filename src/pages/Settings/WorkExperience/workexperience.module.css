@@ -1,0 +1,14 @@
+.experienceContainer {
+  display: flex;
+  gap: 32px;
+}
+.expText {
+  max-width: 280px;
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
