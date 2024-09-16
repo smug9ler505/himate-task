@@ -11,19 +11,19 @@ const Settings = () => {
           <nav className={style.navigation}>
             <ul className={style.navList}>
               <li>
-                <Link to={"/profile"}>Profile</Link>
+                <Link to={"profile"}>Profile</Link>
               </li>
               <li>
-                <Link to={"/work-experience"}>Work Experience</Link>
+                <Link to={"work-experience"}>Work Experience</Link>
               </li>
               <li>
-                <Link to={"/education"}>Education</Link>
+                <Link to={"education"}>Education</Link>
               </li>
               <li>
-                <Link to={"/education"}>Preferences</Link>
+                <Link to={"preferences"}>Preferences</Link>
               </li>
               <li>
-                <Link to={"/notifications"}>Notifications</Link>
+                <Link to={"notifications"}>Notifications</Link>
               </li>
             </ul>
           </nav>

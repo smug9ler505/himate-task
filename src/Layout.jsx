@@ -69,7 +69,7 @@ const Layout = () => {
           </nav>
           <footer className={style.footer}>
             <div className={style.navItem}>
-              <Link className={style.navLink}>
+              <Link to={"settings"} className={style.navLink}>
                 <img src={settings} alt="" />
                 Settings
               </Link>
@@ -88,7 +88,7 @@ const Layout = () => {
                   <p className={style.email}>{store.user.email}</p>
                 </div>
               </div>
-              <Link to={"/logout"} className={style.logoutButton}>
+              <Link to={"logout"} className={style.logoutButton}>
                 <img src={logout} alt="logout" className={style.logoutIcon} />
               </Link>
             </div>
