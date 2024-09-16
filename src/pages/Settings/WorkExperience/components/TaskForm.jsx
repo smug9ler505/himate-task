@@ -15,6 +15,7 @@ const TaskForm = forwardRef(({ exp }, ref) => {
     register,
     handleSubmit,
     control,
+    getValues,
     formState: { errors },
     reset,
   } = useForm({
@@ -104,7 +105,7 @@ const TaskForm = forwardRef(({ exp }, ref) => {
                   render={({ field }) => (
                     <DatePicker
                       selected={field.value}
-                      onChange={(date) => field.onChange(date)} // update the value when the user selects a date
+                      onChange={(date) => field.onChange(date)}
                       dateFormat="MMM yyyy"
                       showMonthYearPicker
                       showFullMonthYearPicker
@@ -121,18 +122,28 @@ const TaskForm = forwardRef(({ exp }, ref) => {
               )}
             </label>
             <label>
-              <legend>Start Date*</legend>
+              <legend>End Date*</legend>
               <div className={style.calendar}>
                 <img src={calendar} width={"20px"} height={"20px"} alt="" />
 
                 <Controller
                   name="endDate"
                   control={control}
-                  rules={{ required: true }}
+                  rules={{
+                    required: true,
+                    validate: (value) => {
+                      const startDate = getValues("startDate");
+                      return (
+                        !startDate ||
+                        value > startDate ||
+                        "End date must be after start date"
+                      );
+                    },
+                  }}
                   render={({ field }) => (
                     <DatePicker
                       selected={field.value}
-                      onChange={(date) => field.onChange(date)} // update the value when the user selects a date
+                      onChange={(date) => field.onChange(date)}
                       dateFormat="MMM yyyy"
                       showMonthYearPicker
                       showFullMonthYearPicker
@@ -142,6 +153,11 @@ const TaskForm = forwardRef(({ exp }, ref) => {
                   )}
                 />
               </div>
+              {errors.endDate && (
+                <p className="text-red" role="alert">
+                  {errors.endDate.message}
+                </p>
+              )}
               {errors.endDate?.type === "required" && (
                 <p className="text-red" role="alert">
                   End date is required
