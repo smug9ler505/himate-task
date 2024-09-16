@@ -1,11 +1,7 @@
-import { Controller, useForm } from "react-hook-form";
-import style from "./TaskForm.module.css";
+import style from "./DeleteAlert.module.css";
 import flag from "/src/assets/icons/flag.svg";
 import { forwardRef } from "react";
 import closeX from "/src/assets/icons/close.svg";
-import DatePicker from "react-datepicker";
-import calendar from "/src/assets/icons/calendar.svg";
-import search from "/src/assets/icons/discover.svg";
 import useStore from "/src/store.js";
 
 // eslint-disable-next-line react/display-name
@@ -29,17 +25,27 @@ const DeleteAlert = forwardRef(({ id }, ref) => {
           </button>
         </div>
         <div>
-          <strong>Delete experience</strong>
-          <div>
+          <h2>Delete experience</h2>
+          <p>
             Are you sure you want to delete this experience? This action cannot
             be undone.
-          </div>
+          </p>
         </div>
         <div className={style.actions}>
-          <button type="button" onClick={() => ref.current.close()}>
+          <button
+            type="button"
+            onClick={() => ref.current.close()}
+            title="Cancel"
+            className={style.btnAction}
+          >
             Cancel
           </button>
-          <button type="button" onClick={() => handleClick(id)}>
+          <button
+            type="button"
+            onClick={() => handleClick(id)}
+            title="Delete"
+            className={style.btnAction}
+          >
             Delete
           </button>
         </div>

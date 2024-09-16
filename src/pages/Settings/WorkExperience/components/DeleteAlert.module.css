@@ -1,29 +1,64 @@
-.card {
-  border: 1px solid black;
+.dialog {
+  margin: 15rem auto;
+  padding: 1.5rem;
+  max-width: 400px;
+  box-shadow: 0px 8px 8px -4px #10182808;
+  box-shadow: 0px 20px 24px -4px #10182814;
+  border: 1px solid #d0d5dd;
   border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px;
-  max-width: 512px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0px 1px 2px 0px #1018280d;
-}
-
-.expInfo {
-  text-transform: capitalize;
-}
-
-.btnAction {
-  background-color: unset;
-  transition: all ease-in-out 0.25s;
-  cursor: pointer;
-  &[title="Delete"]:hover {
-    transform: scale(1.2);
-    border-bottom: 3px solid red;
+  legend {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 6px;
   }
-  &[title="Modify"]:hover {
-    transform: scale(1.2);
-    border-bottom: 3px solid green;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    button {
+      cursor: pointer;
+    }
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  button {
+    width: 100%;
+    color: #344054;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 170px;
+    padding: 10px 57.5px;
+    background: #ffffff;
+    border: 1px solid#D0D5DD;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all ease-in 0.1s;
+  }
+  button:nth-child(2) {
+    color: #ffffff;
+    background: #d92d20;
+    border: 1px solid #d92d20;
+    box-shadow: 0px 1px 2px 0px #1018280d;
+  }
+  button:hover {
+    transform: scale(1.05);
   }
 }

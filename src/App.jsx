@@ -10,7 +10,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         {/* Navigate to the prepared page */}
-        {/* <Route path="/" element={<Navigate to="/settings/work-experience" />} /> */}
+        <Route path="/" element={<Navigate to="/settings/work-experience" />} />
 
         <Route path="/" element={<Layout />}>
           <Route path="settings" element={<Settings />}>
